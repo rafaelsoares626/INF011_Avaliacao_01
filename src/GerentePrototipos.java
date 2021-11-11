@@ -5,22 +5,26 @@ import java.util.Map;
 
 public class GerentePrototipos {
 	
-	private Map<String, PrototipavelIF> catalogo;	
+	private static GerentePrototipos catalogo;	
+	private Map<String, PrototipavelIF> registros;	
 	
 	public GerentePrototipos() throws InstantiationException, IllegalAccessException, ClassNotFoundException, IllegalArgumentException, InvocationTargetException, NoSuchMethodException, SecurityException {
-		this.catalogo = new HashMap<String, PrototipavelIF>();		
+		this.registros = new HashMap<String, PrototipavelIF>();		
 	}
 
 	public void catalogar(String nome, PrototipavelIF curso) throws InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, NoSuchMethodException, SecurityException, ClassNotFoundException {
-		this.catalogo.put(nome, curso.prototipar());		
+		this.registros.put(nome, curso.prototipar());		
 	}
 	
 	public static GerentePrototipos getInstance() throws InstantiationException, IllegalAccessException, ClassNotFoundException, IllegalArgumentException, InvocationTargetException, NoSuchMethodException, SecurityException {
-		return new GerentePrototipos();
+		if(GerentePrototipos.catalogo == null) {
+			GerentePrototipos.catalogo = new GerentePrototipos();
+		}
+		return GerentePrototipos.catalogo; 
 	}
 	
 	public Curso getCurso(String chave) {
-		return (Curso) catalogo.get(chave);
+		return (Curso) registros.get(chave);
 	}
 }
 
