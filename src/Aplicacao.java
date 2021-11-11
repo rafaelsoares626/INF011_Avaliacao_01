@@ -117,20 +117,23 @@ public class Aplicacao {
 		catalogo.catalogar(cursoEstruturais.getNome(), cursoEstruturais);		
 		
 		//Clonando um curso
-		Curso curso = catalogo.getCurso("Comportamentais");		
+		Curso curso = catalogo.getCurso("Criacionais");		
 		System.out.println(curso.toString());
+		
 		//Alterando atributos do clone
 		System.out.println(" ");
 		curso = CursoBuilder.reset()
 				.addNomeCurso("Teste")
 				.addCodigoCurso("TEST001")
-				.addDisciplina(disciplinaH)			
+				.addDisciplina(disciplinaH)	
+				.addDisciplina(new Disciplina("TESTEDISC", "CODIGODISC", 0, 30, 0.5))	
 				.addLivro(new Livro("LIVBRI", "Bridge", 20, "ISBNBRI"))
 				.build();	
 		System.out.println(curso.toString());
+		
 		//Sobrescrevendo (Clonando novamente)
 		System.out.println(" ");
-		curso = catalogo.getCurso("Comportamentais");		
+		curso = catalogo.getCurso("Criacionais");		
 		System.out.println(curso.toString());
 	}
 	
@@ -139,5 +142,3 @@ public class Aplicacao {
 		app.Q2();
 	}
 }
-
-

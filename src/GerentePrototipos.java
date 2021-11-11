@@ -1,3 +1,4 @@
+package Model;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.HashMap;
@@ -5,7 +6,7 @@ import java.util.Map;
 
 public class GerentePrototipos {
 	
-	private static GerentePrototipos catalogo;	
+	private static GerentePrototipos gerente;	
 	private Map<String, PrototipavelIF> registros;	
 	
 	public GerentePrototipos() throws InstantiationException, IllegalAccessException, ClassNotFoundException, IllegalArgumentException, InvocationTargetException, NoSuchMethodException, SecurityException {
@@ -17,10 +18,10 @@ public class GerentePrototipos {
 	}
 	
 	public static GerentePrototipos getInstance() throws InstantiationException, IllegalAccessException, ClassNotFoundException, IllegalArgumentException, InvocationTargetException, NoSuchMethodException, SecurityException {
-		if(GerentePrototipos.catalogo == null) {
-			GerentePrototipos.catalogo = new GerentePrototipos();
+		if(GerentePrototipos.gerente == null) {
+			GerentePrototipos.gerente = new GerentePrototipos();
 		}
-		return GerentePrototipos.catalogo; 
+		return GerentePrototipos.gerente; 
 	}
 	
 	public Curso getCurso(String chave) {

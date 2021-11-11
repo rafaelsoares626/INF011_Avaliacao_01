@@ -1,3 +1,4 @@
+package Model;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,13 +38,9 @@ public class Ementa{
 	}
 	
 	public void mostrar() {
-		System.out.println(
-				"EMENTA DO CURSO" + 
-				"\n\nNome do curso: " + this.nome +
-				"\n\nCodigo do curso: " + this.codigo +
-				"\n\nCarga horaria do curso: "+ this.chTotal + " Horas" +
-				"\n\nDisciplinas do curso: " + this.mostrarDisciplinasCurso() +
-				"\n\nLivros do curso: " + this.mostrarLivrosCurso());
+		System.out.println("EMENTA DO CURSO" + "\n\nNome do curso: " + this.nome + "\n\nCodigo do curso: " + this.codigo +
+						   "\n\nCarga horaria do curso: "+ this.chTotal + " Horas" + "\n\nDisciplinas do curso: " + this.mostrarDisciplinasCurso() +
+						   "\n\nLivros do curso: " + this.mostrarLivrosCurso());
 	}	
 
 }
