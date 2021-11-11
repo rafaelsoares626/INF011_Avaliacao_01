@@ -9,7 +9,7 @@ public class GerentePrototipos {
 	private static GerentePrototipos gerente;	
 	private Map<String, PrototipavelIF> registros;	
 	
-	public GerentePrototipos() throws InstantiationException, IllegalAccessException, ClassNotFoundException, IllegalArgumentException, InvocationTargetException, NoSuchMethodException, SecurityException {
+	private GerentePrototipos() throws InstantiationException, IllegalAccessException, ClassNotFoundException, IllegalArgumentException, InvocationTargetException, NoSuchMethodException, SecurityException {
 		this.registros = new HashMap<String, PrototipavelIF>();		
 	}
 
